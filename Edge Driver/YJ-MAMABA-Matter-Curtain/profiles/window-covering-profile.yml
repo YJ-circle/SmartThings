@@ -1,0 +1,40 @@
+# deprecated - please use window-covering-battery instead
+name: window-covering-profile
+components:
+- id: main
+  capabilities:
+  - id: windowShade
+    version: 1
+  - id: windowShadePreset
+    version: 1
+  - id: windowShadeLevel
+    version: 1
+  - id: battery
+    version: 1
+  - id: firmwareUpdate
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: Blind
+preferences:
+  - preferenceId: presetPosition
+    explicit: true
+  - name: closevalue
+    title: "닫은 상태 사용자 지정"
+    description: "열림 상태보다 높은 값으로 설정하면 안됩니다."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 100
+      default: 0
+  - name: openvalue
+    title: "열림 상태 사용자 지정"
+    description: "닫힘 상태보다 낮은 값으로 설정하면 안됩니다."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 100
+      default: 100

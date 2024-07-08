@@ -1,0 +1,6 @@
+name: 'YJ-MAMABA-Matter-Curtain'
+packageKey: 'YJ-matter-window-covering'
+permissions:
+  matter: {}
+description: "MAMABA 커튼모터용 임시 엣지드라이버"
+vendorSupportInformation: "lab@thelightway.kr"
