@@ -86,10 +86,28 @@ local function device_added(driver, device)
   device:emit_event(
     capabilities.windowShade.supportedWindowShadeCommands({"open", "close", "pause"}, {visibility = {displayed = false}})
   )
+    device:emit_event(
+    capabilities.lock.supportedLockValues({"locked", "unlocked"}, {visibility = {displayed = false}})
+  )
+    device:emit_event(
+    capabilities.lock.supportedLockCommands({"lock", "unlock", "pause"}, {visibility = {displayed = false}})
+  )
+    device:emit_event(
+    capabilities.lock.lock("unlocked", {visibility = {displayed = false}})
+  )
 end
 
 local function device_removed(driver, device) log.info("device removed") end
 
+local function device_lock_check(driver, device)
+  movingLock = device:get_latest_state(
+                     "main", capabilities.lock.ID,
+                       capabilities.lock.lock.NAME
+                   )
+  if movingLock == "locked" then
+    return true
+  end
+end
 -- capability handlers
 local function handle_preset(driver, device, cmd)
   local endpoint_id = device:component_to_endpoint(cmd.component)
@@ -104,6 +122,10 @@ end
 
 -- close covering
 local function handle_close(driver, device, cmd)
+  if device_lock_check(driver, device) then
+    log.info("Stop command, currently locked")
+    return
+  end
   local endpoint_id = device:component_to_endpoint(cmd.component)
   local lift_value = 100 - device.preferences.closevalue
   local hundredths_lift_percent = lift_value * 100
@@ -116,7 +138,10 @@ end
 
 -- open covering
 local function handle_open(driver, device, cmd)
-
+  if device_lock_check(driver, device) then
+    log.info("Stop command, currently locked")
+    return
+  end
   local endpoint_id = device:component_to_endpoint(cmd.component)
   local lift_value = 100 - device.preferences.openvalue
   local hundredths_lift_percent = lift_value * 100
@@ -138,6 +163,10 @@ end
 -- move to shade level
 -- beteween 0-100
 local function handle_shade_level(driver, device, cmd)
+  if device_lock_check(driver, device) then
+    log.info("Stop command, currently locked")
+    return
+  end
   local endpoint_id = device:component_to_endpoint(cmd.component)
   local lift_percentage_value = 100 - cmd.args.shadeLevel
   local hundredths_lift_percentage = lift_percentage_value * 100
@@ -238,6 +267,18 @@ local function battery_percent_remaining_attr_handler(driver, device, ib, respon
   end
 end
 
+local function handle_lock(driver, device)
+    device:emit_event(
+    capabilities.lock.lock("locked")
+  )
+end
+
+local function handle_unlock(driver, device)
+    device:emit_event(
+    capabilities.lock.lock("unlocked")
+  )
+end
+
 local matter_driver_template = {
   lifecycle_handlers = {init = device_init, removed = device_removed, added = device_added, infoChanged = info_changed},
   matter_handlers = {
@@ -283,6 +324,10 @@ local matter_driver_template = {
     },
     [capabilities.windowShadeLevel.ID] = {
       [capabilities.windowShadeLevel.commands.setShadeLevel.NAME] = handle_shade_level,
+    },
+	[capabilities.lock.ID] = {
+      [capabilities.lock.commands.lock.NAME] = handle_lock,
+	  [capabilities.lock.commands.unlock.NAME] = handle_unlock
     },
   },
   supported_capabilities = {
