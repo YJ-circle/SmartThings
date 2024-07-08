@@ -1,5 +1,8 @@
 마마바 커튼 모터를 사용하기 위해 제작되었습니다.
 
+코드 원본 :
+https://github.com/SmartThingsCommunity/SmartThingsEdgeDrivers/tree/main/drivers/SmartThings/matter-window-covering
+
 업데이트 내용
 ==============
 2024.06.10 기존 ST 코드 수정
