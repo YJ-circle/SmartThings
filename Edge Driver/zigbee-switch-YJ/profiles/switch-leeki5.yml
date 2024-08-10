@@ -1,0 +1,48 @@
+name: switch-leeki5
+components:
+  - id: main
+    label: '전체 조작'
+    capabilities:
+      - id: switch
+        version: 1
+      - id: firmwareUpdate
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: Switch
+  - id: switch1
+    label: '스위치 1'
+    capabilities:
+      - id: switch
+        version: 1
+    categories:
+      - name: Switch
+  - id: switch2
+    label: '스위치 2'
+    capabilities:
+      - id: switch
+        version: 1
+    categories:
+      - name: Switch
+  - id: switch3
+    label: '스위치 3'
+    capabilities:
+      - id: switch
+        version: 1
+    categories:
+      - name: Switch
+  - id: switch4
+    label: '스위치 4'
+    capabilities:
+      - id: switch
+        version: 1
+    categories:
+      - name: Switch
+  - id: switch5
+    label: 'USB 전원'
+    capabilities:
+      - id: switch
+        version: 1
+    categories:
+      - name: Switch

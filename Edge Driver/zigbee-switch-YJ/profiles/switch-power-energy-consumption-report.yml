@@ -1,0 +1,87 @@
+name: switch-power-energy-consumption-report
+components:
+  - id: main
+    capabilities:
+      - id: switch
+        version: 1
+      - id: pilotgreen48610.yjswitchstatus
+        version: 1
+      - id: powerMeter
+        version: 1
+      - id: energyMeter
+        version: 1
+      - id: powerConsumptionReport
+        version: 1
+      - id: firmwareUpdate
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: SmartPlug
+preferences:
+  - name: "version"
+    title: "Version 1.1"
+    #description: "테스트버전"  
+    required: false
+    explicit: false
+    preferenceType: string
+    definition:
+      stringType: paragraph
+      default: 24.03.19 - 대시보드 개선
+  - name: "powerMinInterval"
+    title: "전력량 최소 보고 주기 설정"
+    description: "10 설정시 값 변화가 있어도 10초 내로 보고 받지 않음"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 0
+      maximum: 7200
+      default: 0
+  - name: "powerMaxInterval"
+    title: "전력량 최대 보고 주기 설정"
+    description: "3600 설정시 값 변화가 없어도 1시간 주기로 보고 받음"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 300
+      maximum: 7200
+      default: 300
+  - name: "powerRepo"
+    title: "전력량 보고 기준치 설정"
+    description: "최소 ~W이상 변화시 보고"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 1
+      maximum: 100
+      default: 1
+  - name: "onoffInterval"
+    title: "스위치 최대 보고 주기 설정"
+    description: "3600 설정시 값 변화가 없어도 1시간 주기로 보고 받음"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 300
+      maximum: 7200
+      default: 300
+  - name: "onvalue"
+    title: "스위치 ON 기준치"
+    description: "50 설정시 50W 이상이면 장치상태 ON으로 표시"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 0
+      maximum: 300
+      default: 10
+  - name: "offvalue"
+    title: "스위치 OFF 기준치"
+    description: "50 설정시 50W 미만이면 장치상태 OFF으로 표시"
+    required: false
+    preferenceType: number
+    definition:
+      minimum: 0
+      maximum: 300
+      default: 0
+metadata:
+  mnmn: SmartThingsCommunity
+  vid: 5832b618-1a95-3d0f-b0e5-68bab089a3dd

@@ -1,0 +1,51 @@
+zigbeeManufacturer:
+  #Dawon
+  - id: "DAWON_DNS/PM-B430-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-B430-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-B530-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-B530-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-C140-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-C140-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-B540-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-B540-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/ST-B550-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: ST-B550-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-C150-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-C150-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-C250-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-C250-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/PM-B440-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: PM-B440-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "DAWON_DNS/KB-B540R-ZB"
+    deviceLabel: "Dawon Outlet"
+    manufacturer: DAWON_DNS
+    model: KB-B540R-ZB
+    deviceProfileName: switch-power-energy-consumption-report
+  - id: "eZEX/E220-KR5N0Z0-HA"
+    deviceLabel: '렐키 멀티탭'
+    model: "E220-KR5N0Z0-HA"
+    deviceProfileName: switch-leeki5

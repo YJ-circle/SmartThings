@@ -1,0 +1,7 @@
+name: 'Zigbee Switch-YJ'
+packageKey: 'zigbee-switch-YJ'
+description: "다원 플러그 Custom Edge Driver"
+developer: "TheLightWay"
+vendorSupportInformation: "lab@thelightway.kr"
+permissions:
+  zigbee: {}
