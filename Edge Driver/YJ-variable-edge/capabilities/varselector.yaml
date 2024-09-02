@@ -1,0 +1,27 @@
+name: varselector
+attributes:
+  select:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+            - string
+            - number
+      additionalProperties: false
+      required:
+        - value
+    setter: setSelectVar
+    enumCommands: []
+commands:
+  setSelectVar:
+    name: setSelectVar
+    arguments:
+      - name: setSelectVar
+        optional: false
+        schema:
+          type: string
+          enum:
+            - string
+            - number

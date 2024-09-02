@@ -1,0 +1,26 @@
+dashboard:
+  states: []
+  actions: []
+detailView:
+  - label: '{{i18n.label}}'
+    displayType: list
+    list:
+      command:
+        name: setSelectVar
+        alternatives:
+          - key: string
+            value: '{{i18n.attributes.select.i18n.value.string.label}}'
+          - key: number
+            value: '{{i18n.attributes.select.i18n.value.number.label}}'
+        argumentType: string
+      state:
+        value: select.value
+        valueType: string
+        alternatives:
+          - key: string
+            value: '{{i18n.attributes.select.i18n.value.string.label}}'
+          - key: number
+            value: '{{i18n.attributes.select.i18n.value.number.label}}'
+automation:
+  conditions: []
+  actions: []
