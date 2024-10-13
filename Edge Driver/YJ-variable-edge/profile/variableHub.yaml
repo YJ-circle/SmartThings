@@ -1,0 +1,9 @@
+name: variableHub
+components:
+- id: main
+  capabilities:
+  - id: varselector
+    version: 1
+  - id: momentary
+    version: 1
+  category: bridge

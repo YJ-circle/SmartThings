@@ -1,0 +1,6 @@
+name: 'YJ-variable-edge'
+packageKey: 'YJ-variable-edge'
+permissions:
+  discovery: {}
+description: "String과 Number 변수용 엣지드라이버"
+vendorSupportInformation: "lab@thelightway.kr"

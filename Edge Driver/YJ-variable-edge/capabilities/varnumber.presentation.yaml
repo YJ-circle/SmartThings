@@ -1,0 +1,26 @@
+dashboard:
+  states:
+  - label: "{{numvalue.value}}"
+  actions: []
+  panelItems: []
+detailView:
+- label: "{{i18n.label}}"
+  displayType: numberField
+  numberField:
+    value: numvalue.value
+    valueType: number
+    command: setValue
+    argumentType: number
+automation:
+  conditions:
+  - label: "{{i18n.label}}"
+    displayType: numberField
+    numberField:
+      value: numvalue.value
+      valueType: number
+  actions:
+  - label: "{{i18n.label}}"
+    displayType: numberField
+    numberField:
+      command: setValue
+      argumentType: number

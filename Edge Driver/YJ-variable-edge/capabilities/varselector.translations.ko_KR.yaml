@@ -1,0 +1,21 @@
+tag: ko_KR
+label: 변수 타입 설정
+attributes:
+  select:
+    label: 변수 타입 선택
+    i18n:
+      value:
+        string:
+          label: 문자열
+        number:
+          label: 숫자
+commands:
+  setSelectVar:
+    description: 원하는 변수 타입을 선택하세요.
+    arguments:
+      setSelectVar:
+        i18n:
+          string:
+            label: 문자열
+          number:
+            label: 숫자

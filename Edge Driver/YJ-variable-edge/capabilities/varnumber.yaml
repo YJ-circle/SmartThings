@@ -1,0 +1,22 @@
+name: varnum
+ephemeral: false
+attributes:
+  numvalue:
+    schema:
+      type: object
+      properties:
+        value:
+          type: number
+      additionalProperties: false
+      required:
+      - value
+    setter: setValue
+    enumCommands: []
+commands:
+  setValue:
+    name: setValue
+    arguments:
+    - name: numvalue
+      optional: false
+      schema:
+        type: number
