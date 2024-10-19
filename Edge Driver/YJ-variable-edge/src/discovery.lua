@@ -1,4 +1,7 @@
+local log = require "log"
 local discovery = {}
+local capabilities = require "st.capabilities"
+local SEL_CAPA = capabilities["pilotgreen48610.varselector"]
 
 function discovery.handle_discovery(driver, _should_continue)
   local metadata = {
@@ -10,10 +13,14 @@ function discovery.handle_discovery(driver, _should_continue)
     model = "v1",
     vendor_provided_label = nil
   }
-
-  -- tell the cloud to create a new device record, will get synced back down
-  -- and `device_added` and `device_init` callbacks will be called
-  driver:try_create_device(metadata)
+   local add_device = driver:try_create_device(metadata)
+   
+    if add_device then
+       
+        log.debug(add_device)
+    else
+        log.debug("Failed to create device")
+    end
 end
 
 return discovery
