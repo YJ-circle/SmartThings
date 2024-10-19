@@ -2,8 +2,9 @@ name: variableHub
 components:
 - id: main
   capabilities:
-  - id: varselector
+  - id: pilotgreen48610.varselector
     version: 1
   - id: momentary
     version: 1
-  category: bridge
+  categories:
+  - name: Bridges
