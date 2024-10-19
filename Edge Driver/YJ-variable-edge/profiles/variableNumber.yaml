@@ -1,0 +1,9 @@
+name: variableNumber
+components:
+- id: main
+  capabilities:
+  - id: switch
+    version: 1
+  - id: pilotgreen48610.varnum
+    version: 1
+  category: switch

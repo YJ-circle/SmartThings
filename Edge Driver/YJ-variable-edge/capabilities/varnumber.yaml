@@ -1,4 +1,4 @@
-name: varnum
+name: varnumtest
 ephemeral: false
 attributes:
   numvalue:
@@ -10,13 +10,42 @@ attributes:
       additionalProperties: false
       required:
       - value
-    setter: setValue
+    setter: set
     enumCommands: []
 commands:
-  setValue:
-    name: setValue
+  set:
+    name: set
     arguments:
-    - name: numvalue
+    - name: value
       optional: false
       schema:
         type: number
+  add:
+    name: add
+    arguments:
+    - name: value
+      optional: false
+      schema:
+        type: number
+  minus:
+    name: minus
+    arguments:
+    - name: value
+      optional: false
+      schema:
+        type: number
+  multiply:
+    name: multiply
+    arguments:
+    - name: value
+      optional: false
+      schema:
+        type: number
+  divide:
+    name: divide
+    arguments:
+    - name: value
+      optional: false
+      schema:
+        type: number
+        minimum: 1

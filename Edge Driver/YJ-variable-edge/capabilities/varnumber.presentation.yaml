@@ -9,7 +9,7 @@ detailView:
   numberField:
     value: numvalue.value
     valueType: number
-    command: setValue
+    command: set
     argumentType: number
 automation:
   conditions:
@@ -19,8 +19,29 @@ automation:
       value: numvalue.value
       valueType: number
   actions:
-  - label: "{{i18n.label}}"
+  - label: "{{i18n.commands.label}}"
     displayType: numberField
     numberField:
-      command: setValue
+      command: set
       argumentType: number
+  - label: "{{i18n.commands.label}}"
+    displayType: numberField
+    numberField:
+      command: add
+      argumentType: number
+  - label: "{{i18n.commands.label}}"
+    displayType: numberField
+    numberField:
+      command: minus
+      argumentType: number
+  - label: "{{i18n.commands.label}}"
+    displayType: numberField
+    numberField:
+      command: multiply
+      argumentType: number
+  - label: "{{i18n.commands.label}}"
+    displayType: numberField
+    numberField:
+      command: divide
+      argumentType: number
+      minimum: 1
